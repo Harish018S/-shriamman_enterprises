@@ -52,6 +52,13 @@ export default function HomePage() {
         badge="Established 2005 • 21 years of service"
       />
 
+      <div className="energy-ticker" aria-label="Energy solutions">
+        <div className="energy-ticker-track">
+          <span>Solar EPC Support</span><span>•</span><span>Commercial Power Systems</span><span>•</span><span>Reliable Energy Planning</span><span>•</span>
+          <span>Solar EPC Support</span><span>•</span><span>Commercial Power Systems</span><span>•</span><span>Reliable Energy Planning</span><span>•</span>
+        </div>
+      </div>
+
       <section className="page-section">
         <div className="container">
           <SectionHeader eyebrow="What We Do" title="Powering business continuity and long-term energy readiness" center />

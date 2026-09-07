@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowRight, Maximize2, X } from 'lucide-react'
 
 type HeroSectionProps = {
   eyebrow?: string
@@ -30,6 +31,8 @@ export function HeroSection({
   badge,
   children,
 }: HeroSectionProps) {
+  const [imageZoomed, setImageZoomed] = useState(false)
+
   return (
     <section className="hero-section">
       <div className="container hero-grid">
@@ -57,9 +60,26 @@ export function HeroSection({
         </div>
 
         <div className="hero-visual">
-          <img src={image} alt={imageAlt} loading="eager" />
+          <button
+            type="button"
+            className="hero-image-button"
+            onClick={() => setImageZoomed(true)}
+            aria-label={`View larger image: ${imageAlt}`}
+          >
+            <img src={image} alt={imageAlt} loading="eager" />
+            <span className="image-zoom-hint"><Maximize2 size={16} /> View image</span>
+          </button>
         </div>
       </div>
+
+      {imageZoomed ? (
+        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded solar image" onClick={() => setImageZoomed(false)}>
+          <button type="button" className="lightbox-close" onClick={() => setImageZoomed(false)} aria-label="Close expanded image">
+            <X size={24} />
+          </button>
+          <img src={image} alt={imageAlt} onClick={(event) => event.stopPropagation()} />
+        </div>
+      ) : null}
     </section>
   )
 }
