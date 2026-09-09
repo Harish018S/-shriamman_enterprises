@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight, Maximize2, X } from 'lucide-react'
 
 type HeroSectionProps = {
@@ -16,6 +16,7 @@ type HeroSectionProps = {
   }
   image: string
   imageAlt: string
+  imageSlides?: { src: string; alt: string }[]
   badge?: string
   children?: ReactNode
 }
@@ -28,10 +29,25 @@ export function HeroSection({
   secondaryAction,
   image,
   imageAlt,
+  imageSlides,
   badge,
   children,
 }: HeroSectionProps) {
   const [imageZoomed, setImageZoomed] = useState(false)
+  const slides = imageSlides?.length ? imageSlides : [{ src: image, alt: imageAlt }]
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    if (slides.length < 2) return
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length)
+    }, 3000)
+
+    return () => window.clearInterval(timer)
+  }, [slides.length])
+
+  const currentSlide = slides[activeSlide] ?? slides[0]
 
   return (
     <section className="hero-section">
@@ -64,11 +80,25 @@ export function HeroSection({
             type="button"
             className="hero-image-button"
             onClick={() => setImageZoomed(true)}
-            aria-label={`View larger image: ${imageAlt}`}
+            aria-label={`View larger image: ${currentSlide.alt}`}
           >
-            <img src={image} alt={imageAlt} loading="eager" />
+            <img key={currentSlide.src} src={currentSlide.src} alt={currentSlide.alt} loading="eager" />
             <span className="image-zoom-hint"><Maximize2 size={16} /> View image</span>
           </button>
+          {slides.length > 1 ? (
+            <div className="hero-slide-controls" aria-label="Hero image slides">
+              {slides.map((slide, index) => (
+                <button
+                  type="button"
+                  key={slide.src}
+                  className={index === activeSlide ? 'active' : ''}
+                  aria-label={`Show slide ${index + 1}: ${slide.alt}`}
+                  aria-pressed={index === activeSlide}
+                  onClick={() => setActiveSlide(index)}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -77,7 +107,7 @@ export function HeroSection({
           <button type="button" className="lightbox-close" onClick={() => setImageZoomed(false)} aria-label="Close expanded image">
             <X size={24} />
           </button>
-          <img src={image} alt={imageAlt} onClick={(event) => event.stopPropagation()} />
+          <img src={currentSlide.src} alt={currentSlide.alt} onClick={(event) => event.stopPropagation()} />
         </div>
       ) : null}
     </section>
