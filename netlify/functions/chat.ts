@@ -64,6 +64,10 @@ function answerQuestion(question: string, messages: ChatMessage[]) {
     return 'Hello. I can help with solar systems, generators, electrical panels, stabilizers, installation, and maintenance. What do you need help with?'
   }
 
+  if (/about (the )?company|who are you|tell me about (the )?company|shri amman|your company/.test(normalizedQuestion)) {
+    return 'Shri Amman Enterprises is an established power-solutions company operating since 2005. Its core work includes diesel generator sales and service, electrical panels, stabilizers, power distribution, installation, maintenance, and AMC support. The company is expanding its capabilities into solar PV, battery storage, solar EPC, solar water pumping, solar street lighting, hybrid solar + generator systems, and solar O&M for commercial and industrial requirements.'
+  }
+
   if (/all products|product list|what products|which products|available products|what .* available/.test(normalizedQuestion)) {
     return productListAnswer()
   }
