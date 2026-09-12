@@ -12,6 +12,8 @@ import WhyChooseUsPage from './pages/WhyChooseUsPage'
 import ContactPage from './pages/ContactPage'
 import RequestQuotePage from './pages/RequestQuotePage'
 import SupplierPartnerPage from './pages/SupplierPartnerPage'
+import ProductsPage from './pages/ProductsPage'
+import SolutionsPage from './pages/SolutionsPage'
 import { PrivacyPolicyPage, TermsConditionsPage } from './pages/LegalPages'
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/generator-solutions" element={<GeneratorSolutionsPage />} />
           <Route path="/solar-solutions" element={<SolarSolutionsPage />} />
           <Route path="/solar-technology" element={<SolarTechnologyPage />} />

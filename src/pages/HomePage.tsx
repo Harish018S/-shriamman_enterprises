@@ -203,6 +203,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="page-section demo-feedback-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Client Feedback - Demo Content"
+            title="A place for approved customer experiences"
+            text="These sample testimonials are for website demonstration purposes and will be replaced with verified customer feedback."
+            center
+          />
+          <div className="card-grid four-col">
+            <article className="info-card demo-testimonial"><strong>★★★★★ 5.0/5</strong><p>“The team was responsive throughout the enquiry and helped us understand the generator requirements clearly. The quotation process was straightforward and professional.”</p><span>Operations Manager<br />Industrial Equipment Buyer<br /><small>Sample / Demo Testimonial</small></span></article>
+            <article className="info-card demo-testimonial"><strong>★★★★★ 4.8/5</strong><p>“We appreciated the quick response to our power requirement and the clear technical information provided during the enquiry.”</p><span>Procurement Manager<br />Commercial Projects<br /><small>Sample / Demo Testimonial</small></span></article>
+            <article className="info-card demo-testimonial"><strong>★★★★★ 4.9/5</strong><p>“The product information was easy to understand, and the team was helpful in discussing our power and energy requirements.”</p><span>Project Coordinator<br />Engineering &amp; Infrastructure<br /><small>Sample / Demo Testimonial</small></span></article>
+            <article className="info-card demo-testimonial"><strong>★★★★★ 4.8/5</strong><p>“The quotation enquiry process was simple, and the technical requirements were captured clearly.”</p><span>Purchase Executive<br />Industrial Buyer<br /><small>Sample / Demo Testimonial</small></span></article>
+          </div>
+        </div>
+      </section>
+
       <CTASection
         title="Need a tailored energy solution?"
         text="Discuss your power backup, generator, or solar requirement with our team to plan the right solution for your facility."

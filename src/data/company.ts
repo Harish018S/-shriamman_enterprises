@@ -24,8 +24,8 @@ export const company = {
   navItems: [
     { label: 'Home', to: '/' },
     { label: 'About', to: '/about' },
-    { label: 'Generator Solutions', to: '/generator-solutions' },
-    { label: 'Solar Solutions', to: '/solar-solutions' },
+    { label: 'Products', to: '/products' },
+    { label: 'Solutions', to: '/solutions' },
     { label: 'Services', to: '/services' },
     { label: 'Industries', to: '/industries' },
     { label: 'Projects', to: '/projects' },
