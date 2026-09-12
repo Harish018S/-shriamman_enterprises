@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '../components/PageHero'
 import { SectionHeader } from '../components/SectionHeader'
 import { hybridConfigurations, mountingCategories, productCategories, productSegments, products } from '../data/products'
+import { productImageByCategory, siteImages } from '../data/images'
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -15,8 +16,8 @@ export default function ProductsPage() {
         eyebrow="Products"
         title="Power equipment and solar components, clearly specified."
         text="Explore reference products and solution categories across generators, solar, storage, electrical distribution, and hybrid power. Manufacturer specifications are distinguished from company commercial information."
-        image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85"
-        imageAlt="Industrial power equipment"
+        image={siteImages.generator.imagePath}
+        imageAlt={siteImages.generator.altText}
       />
 
       <section className="page-section product-disclaimer-section">
@@ -37,6 +38,7 @@ export default function ProductsPage() {
           <div className="product-grid">
             {visibleProducts.map((product) => (
               <article className="product-card" key={product.id}>
+                <div className="product-card-image-wrap"><img className="product-card-image" src={productImageByCategory[product.category].imagePath} alt={productImageByCategory[product.category].altText} loading="lazy" width="800" height="600" /><span>Representative image</span></div>
                 <div className="product-card-topline"><span>{product.category}</span><span>{product.segment}</span></div>
                 <h3>{product.name}</h3>
                 <p className="product-model">{product.manufacturer} · {product.model}</p>

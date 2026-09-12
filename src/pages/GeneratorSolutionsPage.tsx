@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const generatorServices = [
   'Generator sourcing',
@@ -16,7 +17,7 @@ const generatorServices = [
 export default function GeneratorSolutionsPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Generator Solutions" title="Dependable power backup for business continuity" image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85" imageAlt="Industrial generator and power equipment" />
+      <PageHero eyebrow="Generator Solutions" title="Dependable power backup for business continuity" image={siteImages.generator.imagePath} imageAlt={siteImages.generator.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -52,8 +53,8 @@ export default function GeneratorSolutionsPage() {
           eyebrow="Backup power"
           title="Keep essential operations moving through interruptions"
           text="A dependable generator solution is more than the machine. It includes the right capacity, safe installation, electrical changeover, commissioning, and a service plan that keeps the system ready."
-          image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Industrial technician working with electrical equipment"
+          image={siteImages.services.imagePath}
+          imageAlt={siteImages.services.altText}
         />
       </section>
 

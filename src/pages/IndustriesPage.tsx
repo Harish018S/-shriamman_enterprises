@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const industries = [
   'Manufacturing',
@@ -18,7 +19,7 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Industries We Serve" title="Solutions suitable for a range of business environments" image="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=85" imageAlt="Modern industrial facility" />
+      <PageHero eyebrow="Industries We Serve" title="Solutions suitable for a range of business environments" image={siteImages.industryManufacturing.imagePath} imageAlt={siteImages.industryManufacturing.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -54,8 +55,8 @@ export default function IndustriesPage() {
           eyebrow="Operational context"
           title="Energy infrastructure should fit the work happening around it"
           text="Production floors, hospitals, offices, warehouses, and campuses all have different load patterns and continuity priorities. The first step is understanding the environment before selecting the solution."
-          image="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Modern industrial facility interior"
+          image={siteImages.industryManufacturing.imagePath}
+          imageAlt={siteImages.industryManufacturing.altText}
         />
       </section>
     </div>

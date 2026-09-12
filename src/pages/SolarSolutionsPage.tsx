@@ -2,6 +2,7 @@ import { CTASection } from '../components/CTASection'
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const solarCategories = [
   {
@@ -61,7 +62,7 @@ const workflow = [
 export default function SolarSolutionsPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Solar Energy Solutions" title="Solar Energy Solutions for a Smarter Tomorrow" text="We are expanding into solar procurement and installation to support businesses with practical renewable energy solutions for commercial and industrial operations." image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85" imageAlt="Large rooftop solar installation" />
+      <PageHero eyebrow="Solar Energy Solutions" title="Solar Energy Solutions for a Smarter Tomorrow" text="We are expanding into solar procurement and installation to support businesses with practical renewable energy solutions for commercial and industrial operations." image={siteImages.solar.imagePath} imageAlt={siteImages.solar.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -103,8 +104,8 @@ export default function SolarSolutionsPage() {
           eyebrow="Solar in practice"
           title="Turn available roof and land into a considered energy asset"
           text="From rooftop feasibility to commercial and industrial installations, solar planning should connect the available site with actual operating demand, system performance, and long-term maintenance."
-          image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Solar panels installed across a large rooftop"
+          image={siteImages.solar.imagePath}
+          imageAlt={siteImages.solar.altText}
         />
       </section>
 

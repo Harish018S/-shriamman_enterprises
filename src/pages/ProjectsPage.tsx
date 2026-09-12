@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const projects = [
   { name: 'Project Name', location: 'Location', solution: 'Solution', capacity: 'Capacity', year: 'Year' },
@@ -12,7 +13,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Projects" title="Project showcase and planning portfolio" image="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85" imageAlt="Power infrastructure and transmission lines" />
+      <PageHero eyebrow="Projects" title="Project showcase and planning portfolio" image={siteImages.hybrid.imagePath} imageAlt={siteImages.hybrid.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -50,8 +51,8 @@ export default function ProjectsPage() {
           eyebrow="Project delivery"
           title="The finished installation is only one part of the outcome"
           text="Strong project records connect the original requirement to the delivered scope, technical decisions, commissioning results, and service plan. This is how future customers can evaluate a project properly."
-          image="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Power infrastructure and electricity transmission lines"
+          image={siteImages.hybrid.imagePath}
+          imageAlt={siteImages.hybrid.altText}
         />
       </section>
     </div>

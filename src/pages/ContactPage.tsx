@@ -3,11 +3,12 @@ import { ContactForm } from '../components/ContactForm'
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 export default function ContactPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Contact Us" title="Connect with our business development team" image="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85" imageAlt="Bright commercial office interior" />
+      <PageHero eyebrow="Contact Us" title="Connect with our business development team" image={siteImages.assistant.imagePath} imageAlt={siteImages.assistant.altText} />
 
       <section className="page-section">
         <div className="container contact-layout">
@@ -37,8 +38,8 @@ export default function ContactPage() {
           eyebrow="Chennai and beyond"
           title="Start with a conversation about your site"
           text="Whether you are planning a new system, replacing aging equipment, or looking for service support, a clear first discussion helps define the right technical path."
-          image="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Bright commercial office interior"
+          image={siteImages.assistant.imagePath}
+          imageAlt={siteImages.assistant.altText}
         />
       </section>
 

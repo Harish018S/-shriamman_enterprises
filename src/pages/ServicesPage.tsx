@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const services = [
   'Consultation',
@@ -17,7 +18,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Services" title="Support across the full power and energy lifecycle" image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85" imageAlt="Electrician inspecting electrical equipment" />
+      <PageHero eyebrow="Services" title="Support across the full power and energy lifecycle" image={siteImages.services.imagePath} imageAlt={siteImages.services.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -50,8 +51,8 @@ export default function ServicesPage() {
           eyebrow="Service in the field"
           title="Good project delivery continues after the switch-on"
           text="Commissioning is a milestone, not the finish line. Clear documentation, planned maintenance, responsive troubleshooting, and technical support help protect the value of the installation."
-          image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Electrician inspecting equipment in a facility"
+          image={siteImages.services.imagePath}
+          imageAlt={siteImages.services.altText}
         />
       </section>
     </div>

@@ -2,11 +2,12 @@ import { SupplierForm } from '../components/SupplierForm'
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 export default function SupplierPartnerPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Partner With Us" title="We welcome supplier and partnership enquiries" image="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1200&q=85" imageAlt="Engineer working on a technical project" />
+      <PageHero eyebrow="Partner With Us" title="We welcome supplier and partnership enquiries" image={siteImages.assistant.imagePath} imageAlt={siteImages.assistant.altText} />
 
       <section className="page-section">
         <div className="container form-shell">
@@ -35,8 +36,8 @@ export default function SupplierPartnerPage() {
           eyebrow="Partner network"
           title="Reliable delivery is stronger when capable teams work together"
           text="We are building relationships with organizations that bring dependable products, technical knowledge, regional reach, or execution capability to commercial and industrial projects."
-          image="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Engineer working on a technical project"
+          image={siteImages.assistant.imagePath}
+          imageAlt={siteImages.assistant.altText}
         />
       </section>
     </div>

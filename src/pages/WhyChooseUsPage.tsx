@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const reasons = [
   'Single-point coordination',
@@ -16,7 +17,7 @@ const reasons = [
 export default function WhyChooseUsPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Why Choose Us" title="Practical, business-focused support for power and energy requirements" image="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" imageAlt="Business team discussing a project" />
+      <PageHero eyebrow="Why Choose Us" title="Practical, business-focused support for power and energy requirements" image={siteImages.about.imagePath} imageAlt={siteImages.about.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -48,8 +49,8 @@ export default function WhyChooseUsPage() {
           eyebrow="A better working relationship"
           title="Make the technical conversation easier to act on"
           text="Customers need practical decisions, clear ownership, and dependable follow-through. We bring the commercial and technical discussion closer together so the next step is easier to see."
-          image="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Business team discussing a project around a table"
+          image={siteImages.about.imagePath}
+          imageAlt={siteImages.about.altText}
         />
       </section>
     </div>

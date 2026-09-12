@@ -83,7 +83,7 @@ export function HeroSection({
             onClick={() => setImageZoomed(true)}
             aria-label={`View larger image: ${currentSlide.alt}`}
           >
-            <img key={currentSlide.src} src={currentSlide.src} alt={currentSlide.alt} loading="eager" />
+            <img key={currentSlide.src} src={currentSlide.src} alt={currentSlide.alt} loading="eager" width="1200" height="800" />
             <span className="image-zoom-hint"><Maximize2 size={16} /> View image</span>
           </button>
           {slides.length > 1 ? (
@@ -108,7 +108,7 @@ export function HeroSection({
           <button type="button" className="lightbox-close" onClick={() => setImageZoomed(false)} aria-label="Close expanded image">
             <X size={24} />
           </button>
-          <img src={currentSlide.src} alt={currentSlide.alt} onClick={(event) => event.stopPropagation()} />
+          <img src={currentSlide.src} alt={currentSlide.alt} width="1200" height="800" onClick={(event) => event.stopPropagation()} />
         </div>
       ) : null}
     </section>

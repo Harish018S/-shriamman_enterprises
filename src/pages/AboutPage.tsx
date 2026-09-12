@@ -1,11 +1,12 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { PageHero } from '../components/PageHero'
 import { VisualBreak } from '../components/VisualBreak'
+import { siteImages } from '../data/images'
 
 export default function AboutPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="About Us" title="From Reliable Backup Power to Sustainable Energy" image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85" imageAlt="Solar panels in a green landscape" />
+      <PageHero eyebrow="About Us" title="From Reliable Backup Power to Sustainable Energy" image={siteImages.about.imagePath} imageAlt={siteImages.about.altText} />
 
       <section className="page-section">
         <div className="container two-col-layout">
@@ -42,8 +43,8 @@ export default function AboutPage() {
           eyebrow="Built from the field"
           title="Experience that starts with how a facility really operates"
           text="Power requirements are shaped by production schedules, critical equipment, site constraints, and the people who maintain the system. Our approach keeps those practical details in view."
-          image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Engineer reviewing industrial power equipment"
+          image={siteImages.about.imagePath}
+          imageAlt={siteImages.about.altText}
         />
       </section>
 

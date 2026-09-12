@@ -4,6 +4,7 @@ import { CTASection } from '../components/CTASection'
 import { HeroSection } from '../components/HeroSection'
 import { QuoteForm } from '../components/QuoteForm'
 import { SectionHeader } from '../components/SectionHeader'
+import { siteImages } from '../data/images'
 
 const solutionCards = [
   {
@@ -67,13 +68,13 @@ export default function HomePage() {
         text="From generator sales, installation and service to solar energy systems, Shri Amman Enterprises helps commercial and industrial facilities stay powered, efficient and ready for growth."
         primaryAction={{ label: 'Explore Solar Solutions', href: '/solar-solutions' }}
         secondaryAction={{ label: 'Explore Generator Solutions', href: '/generator-solutions' }}
-        image="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1200&q=80"
-        imageAlt="Solar panels and industrial power infrastructure"
+        image={siteImages.hero.imagePath}
+        imageAlt={siteImages.hero.altText}
         imageSlides={[
-          { src: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1200&q=80', alt: 'Solar panels and industrial power infrastructure' },
-          { src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80', alt: 'Industrial generator supplying backup power' },
-          { src: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80', alt: 'Large rooftop solar installation' },
-          { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80', alt: 'Generator and electrical equipment in a power facility' },
+          { src: siteImages.hero.imagePath, alt: siteImages.hero.altText },
+          { src: siteImages.generator.imagePath, alt: siteImages.generator.altText },
+          { src: siteImages.solar.imagePath, alt: siteImages.solar.altText },
+          { src: siteImages.assistant.imagePath, alt: siteImages.assistant.altText },
         ]}
         badge="Generators + Solar | Established 2005"
       />

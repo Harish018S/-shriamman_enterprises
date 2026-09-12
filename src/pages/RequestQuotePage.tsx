@@ -2,11 +2,12 @@ import { QuoteForm } from '../components/QuoteForm'
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 export default function RequestQuotePage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Request a Quote" title="Tell us about your power or solar requirement" image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85" imageAlt="Project documents and planning notes" />
+      <PageHero eyebrow="Request a Quote" title="Tell us about your power or solar requirement" image={siteImages.rfq.imagePath} imageAlt={siteImages.rfq.altText} />
 
       <section className="page-section">
         <div className="container form-shell">
@@ -33,8 +34,8 @@ export default function RequestQuotePage() {
           eyebrow="Prepare your brief"
           title="The more context you share, the more useful our response can be"
           text="A drawing, BOQ, recent bill, equipment list, site photograph, or simple description can help us understand the requirement and ask better follow-up questions."
-          image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Project documents and planning notes on a desk"
+          image={siteImages.rfq.imagePath}
+          imageAlt={siteImages.rfq.altText}
         />
       </section>
     </div>

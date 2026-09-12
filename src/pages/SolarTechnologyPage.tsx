@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader'
 import { VisualBreak } from '../components/VisualBreak'
 import { PageHero } from '../components/PageHero'
+import { siteImages } from '../data/images'
 
 const techStack = [
   {
@@ -36,7 +37,7 @@ const techStack = [
 export default function SolarTechnologyPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Solar Products / Technology" title="Technology options for practical solar system planning" image="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85" imageAlt="Rows of photovoltaic solar panels" />
+      <PageHero eyebrow="Solar Products / Technology" title="Technology options for practical solar system planning" image={siteImages.solar.imagePath} imageAlt={siteImages.solar.altText} />
 
       <section className="page-section">
         <div className="container">
@@ -68,8 +69,8 @@ export default function SolarTechnologyPage() {
           eyebrow="System thinking"
           title="Every component has a job in the final energy yield"
           text="Modules, inverters, structures, protection, cabling, and monitoring work as one system. We help align those choices with the site, capacity, installation conditions, and service expectations."
-          image="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85"
-          imageAlt="Rows of photovoltaic solar panels in daylight"
+          image={siteImages.solar.imagePath}
+          imageAlt={siteImages.solar.altText}
         />
       </section>
 

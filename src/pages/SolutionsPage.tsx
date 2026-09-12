@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { CTASection } from '../components/CTASection'
 import { PageHero } from '../components/PageHero'
 import { SectionHeader } from '../components/SectionHeader'
+import { siteImages } from '../data/images'
 
 const solutions = [
   { title: 'Rooftop Solar', text: 'Plan on-site generation around available roof area, consumption, electrical integration, and long-term support.', icon: SunMedium },
@@ -17,7 +18,7 @@ const solutions = [
 export default function SolutionsPage() {
   return (
     <div className="page-shell">
-      <PageHero eyebrow="Solutions" title="Power solutions that connect today's reliability with tomorrow's energy plan." text="Shri Amman Enterprises is established in generator and electrical solutions and is expanding into solar energy, storage, pumping, lighting, and hybrid power support." image="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85" imageAlt="Large solar installation in an energy facility" />
+      <PageHero eyebrow="Solutions" title="Power solutions that connect today's reliability with tomorrow's energy plan." text="Shri Amman Enterprises is established in generator and electrical solutions and is expanding into solar energy, storage, pumping, lighting, and hybrid power support." image={siteImages.hybrid.imagePath} imageAlt={siteImages.hybrid.altText} />
       <section className="page-section"><div className="container"><SectionHeader eyebrow="Solution areas" title="Start with the operating problem" text="Solutions are not packaged claims. Final design depends on the site, load, application, equipment, and confirmed scope." center /><div className="card-grid three-col">{solutions.map(({ title, text, icon: Icon }) => <article className="info-card solution-card" key={title}><div className="card-icon"><Icon size={25} /></div><h3>{title}</h3><p>{text}</p><Link className="text-link" to="/request-quote">Discuss this solution</Link></article>)}</div></div></section>
       <section className="page-section alt-bg"><div className="container narrow"><SectionHeader eyebrow="Indicative planning inputs" title="The right solution follows the requirement" /><ul className="check-list"><li>Load profile, peak demand, and daily energy consumption</li><li>Solar resource, roof or land area, and electrical integration</li><li>Battery backup duration, generator minimum loading, and critical loads</li><li>Location, delivery requirements, local regulations, and service expectations</li></ul></div></section>
       <CTASection title="Need help choosing a solution?" text="Share the operating context and the team can identify the next practical step." primaryLabel="Request a Quote" primaryHref="/request-quote" secondaryLabel="Explore Products" secondaryHref="/products" />

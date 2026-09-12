@@ -16,7 +16,7 @@ export function PageHero({ eyebrow, title, text, image, imageAlt }: PageHeroProp
           {text ? <p className="lead compact-lead">{text}</p> : null}
         </div>
             <div className="page-hero-image live-image">
-          <img src={image} alt={imageAlt} loading="eager" />
+          <img src={image} alt={imageAlt} loading="eager" width="1200" height="800" />
         </div>
       </div>
     </section>
