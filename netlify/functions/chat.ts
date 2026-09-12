@@ -19,7 +19,7 @@ function answerQuestion(question: string) {
   }
 
   if (/jinko|jkm575n|575\s*wp|575\s*w\b/.test(normalizedQuestion)) {
-    return 'The Jinko Solar Tiger Neo JKM575N-72HL4 is a 575 Wp N-type monocrystalline module with up to 22.26% efficiency and 144 cells. Ask for a quotation to receive the current datasheet, stock, warranty, and project pricing.'
+    return 'The Jinko Solar Tiger Neo JKM575N-72HL4 has an efficiency of 22.26%.'
   }
 
   if (/longi|hi-mo 7|lr7-72hgd|620\s*w/.test(normalizedQuestion)) {
