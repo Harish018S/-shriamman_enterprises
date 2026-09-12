@@ -5,6 +5,11 @@ type ChatMessage = {
 
 function answerQuestion(question: string) {
   const normalizedQuestion = question.toLowerCase()
+    .replace(/\bdisel\b/g, 'diesel')
+    .replace(/\bgenrator(s)?\b/g, 'generator$1')
+    .replace(/\befficency\b/g, 'efficiency')
+    .replace(/\bavailble\b/g, 'available')
+    .replace(/\bspecifcation(s)?\b/g, 'specification$1')
 
   if (/\b(hello|hi|hey)\b|good morning|good evening/.test(normalizedQuestion)) {
     return 'Hello. I can help with solar systems, generators, electrical panels, stabilizers, installation, and maintenance. What do you need help with?'
@@ -16,6 +21,10 @@ function answerQuestion(question: string) {
 
   if (/caterpillar|de125ae0|c4\.4|100\s*kva|110\s*kva/.test(normalizedQuestion)) {
     return 'Yes. The Caterpillar C4.4 DE125AE0 is rated at 100 kVA prime power and 110 kVA standby power at 50 Hz. For current price, availability, installation scope, and the full datasheet, please request a quotation.'
+  }
+
+  if (/generator|genset|dg set|backup power|diesel/.test(normalizedQuestion) && /available|product|model|which|what/.test(normalizedQuestion)) {
+    return 'The listed diesel generator is the Caterpillar C4.4 DE125AE0, rated at 100 kVA prime power and 110 kVA standby power. For current stock, pricing, and other generator options, please request a quotation with your required kVA, application, and location.'
   }
 
   if (/jinko|jkm575n|575\s*wp|575\s*w\b/.test(normalizedQuestion)) {
