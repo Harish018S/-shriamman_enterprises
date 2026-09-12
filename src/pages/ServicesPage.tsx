@@ -1,4 +1,6 @@
 import { SectionHeader } from '../components/SectionHeader'
+import { VisualBreak } from '../components/VisualBreak'
+import { PageHero } from '../components/PageHero'
 
 const services = [
   'Consultation',
@@ -15,12 +17,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero small-hero">
-        <div className="container narrow">
-          <p className="eyebrow">Services</p>
-          <h1>Support across the full power and energy lifecycle</h1>
-        </div>
-      </section>
+      <PageHero eyebrow="Services" title="Support across the full power and energy lifecycle" image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85" imageAlt="Electrician inspecting electrical equipment" />
 
       <section className="page-section">
         <div className="container">
@@ -34,6 +31,28 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="page-section alt-bg">
+        <div className="container">
+          <SectionHeader eyebrow="Delivery model" title="A clear handoff from requirement to reliable operation" center />
+          <div className="step-grid">
+            <div className="step-item"><span>01</span><h3>Understand</h3><p>Clarify the site, load, timeline, budget, and operating priorities.</p></div>
+            <div className="step-item"><span>02</span><h3>Plan</h3><p>Define the equipment, scope, responsibilities, and project sequence.</p></div>
+            <div className="step-item"><span>03</span><h3>Execute</h3><p>Coordinate supply, installation, testing, commissioning, and documentation.</p></div>
+            <div className="step-item"><span>04</span><h3>Maintain</h3><p>Support ongoing performance with service, AMC, and technical assistance.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <VisualBreak
+          eyebrow="Service in the field"
+          title="Good project delivery continues after the switch-on"
+          text="Commissioning is a milestone, not the finish line. Clear documentation, planned maintenance, responsive troubleshooting, and technical support help protect the value of the installation."
+          image="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85"
+          imageAlt="Electrician inspecting equipment in a facility"
+        />
       </section>
     </div>
   )

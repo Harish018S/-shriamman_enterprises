@@ -1,4 +1,6 @@
 import { SectionHeader } from '../components/SectionHeader'
+import { VisualBreak } from '../components/VisualBreak'
+import { PageHero } from '../components/PageHero'
 
 const generatorServices = [
   'Generator sourcing',
@@ -14,12 +16,7 @@ const generatorServices = [
 export default function GeneratorSolutionsPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero small-hero">
-        <div className="container narrow">
-          <p className="eyebrow">Generator Solutions</p>
-          <h1>Dependable power backup for business continuity</h1>
-        </div>
-      </section>
+      <PageHero eyebrow="Generator Solutions" title="Dependable power backup for business continuity" image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85" imageAlt="Industrial generator and power equipment" />
 
       <section className="page-section">
         <div className="container">
@@ -46,6 +43,28 @@ export default function GeneratorSolutionsPage() {
             <li>Preventive maintenance and breakdown assistance</li>
             <li>AMC support for ongoing reliability</li>
           </ul>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <VisualBreak
+          reverse
+          eyebrow="Backup power"
+          title="Keep essential operations moving through interruptions"
+          text="A dependable generator solution is more than the machine. It includes the right capacity, safe installation, electrical changeover, commissioning, and a service plan that keeps the system ready."
+          image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85"
+          imageAlt="Industrial technician working with electrical equipment"
+        />
+      </section>
+
+      <section className="page-section">
+        <div className="container">
+          <SectionHeader eyebrow="Built around your site" title="Generator support that considers the complete installation" center />
+          <div className="card-grid three-col">
+            <article className="info-card"><h3>Capacity planning</h3><p>Review connected load, starting current, critical equipment, backup duration, and future expansion before equipment selection.</p></article>
+            <article className="info-card"><h3>Site coordination</h3><p>Plan access, foundation, ventilation, fuel arrangements, cabling, changeover, and safety requirements with the project team.</p></article>
+            <article className="info-card"><h3>Continuity after handover</h3><p>Use preventive maintenance, breakdown support, and AMC planning to keep backup power ready when it is needed.</p></article>
+          </div>
         </div>
       </section>
     </div>

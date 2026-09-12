@@ -66,8 +66,9 @@ export function HeroSection({
                 </a>
               ) : null}
               {secondaryAction ? (
-                <a className="btn btn-secondary" href={secondaryAction.href}>
+                <a className="btn btn-primary" href={secondaryAction.href}>
                   {secondaryAction.label}
+                  <ArrowRight size={16} />
                 </a>
               ) : null}
             </div>

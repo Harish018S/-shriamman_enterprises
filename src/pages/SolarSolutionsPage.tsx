@@ -1,5 +1,7 @@
 import { CTASection } from '../components/CTASection'
 import { SectionHeader } from '../components/SectionHeader'
+import { VisualBreak } from '../components/VisualBreak'
+import { PageHero } from '../components/PageHero'
 
 const solarCategories = [
   {
@@ -59,15 +61,7 @@ const workflow = [
 export default function SolarSolutionsPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero small-hero">
-        <div className="container narrow">
-          <p className="eyebrow">Solar Energy Solutions</p>
-          <h1>Solar Energy Solutions for a Smarter Tomorrow</h1>
-          <p className="lead compact-lead">
-            We are expanding into solar procurement and installation to support businesses with practical renewable energy solutions for commercial and industrial operations.
-          </p>
-        </div>
-      </section>
+      <PageHero eyebrow="Solar Energy Solutions" title="Solar Energy Solutions for a Smarter Tomorrow" text="We are expanding into solar procurement and installation to support businesses with practical renewable energy solutions for commercial and industrial operations." image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85" imageAlt="Large rooftop solar installation" />
 
       <section className="page-section">
         <div className="container">
@@ -102,6 +96,16 @@ export default function SolarSolutionsPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="page-section">
+        <VisualBreak
+          eyebrow="Solar in practice"
+          title="Turn available roof and land into a considered energy asset"
+          text="From rooftop feasibility to commercial and industrial installations, solar planning should connect the available site with actual operating demand, system performance, and long-term maintenance."
+          image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85"
+          imageAlt="Solar panels installed across a large rooftop"
+        />
       </section>
 
       <CTASection

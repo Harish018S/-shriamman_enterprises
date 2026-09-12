@@ -46,6 +46,18 @@ const planningSteps = [
   { number: '04', title: 'Support', text: 'Keep your power infrastructure dependable with ongoing service.' },
 ]
 
+const marqueeItems = [
+  '• Solar EPC Support',
+  '• Reliable Energy Planning',
+  '• Generator Sale',
+  '• Solar EPC Support',
+  '• Reliable Energy Planning',
+  '• Generator Sale',
+  '• Solar EPC Support',
+  '• Reliable Energy Planning',
+  '• Generator Sale',
+]
+
 export default function HomePage() {
   return (
     <>
@@ -68,8 +80,12 @@ export default function HomePage() {
 
       <div className="energy-ticker" aria-label="Energy solutions">
         <div className="energy-ticker-track">
-          <span>Generator Sales &amp; Service</span><span>•</span><span>Solar EPC Support</span><span>•</span><span>Reliable Energy Planning</span><span>•</span>
-          <span>Generator Sales &amp; Service</span><span>•</span><span>Solar EPC Support</span><span>•</span><span>Reliable Energy Planning</span><span>•</span>
+          <div className="energy-ticker-group" aria-hidden="true">
+            {marqueeItems.map((item, index) => <span key={`first-${index}`}>{item}</span>)}
+          </div>
+          <div className="energy-ticker-group" aria-hidden="true">
+            {marqueeItems.map((item, index) => <span key={`second-${index}`}>{item}</span>)}
+          </div>
         </div>
       </div>
 

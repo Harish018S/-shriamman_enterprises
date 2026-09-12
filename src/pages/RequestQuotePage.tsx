@@ -1,21 +1,41 @@
 import { QuoteForm } from '../components/QuoteForm'
 import { SectionHeader } from '../components/SectionHeader'
+import { VisualBreak } from '../components/VisualBreak'
+import { PageHero } from '../components/PageHero'
 
 export default function RequestQuotePage() {
   return (
     <div className="page-shell">
-      <section className="page-hero small-hero">
-        <div className="container narrow">
-          <p className="eyebrow">Request a Quote</p>
-          <h1>Tell us about your power or solar requirement</h1>
-        </div>
-      </section>
+      <PageHero eyebrow="Request a Quote" title="Tell us about your power or solar requirement" image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85" imageAlt="Project documents and planning notes" />
 
       <section className="page-section">
         <div className="container form-shell">
           <SectionHeader eyebrow="RFQ / Enquiry" title="Share the details and our team will respond" />
           <QuoteForm />
         </div>
+      </section>
+
+      <section className="page-section alt-bg">
+        <div className="container narrow">
+          <SectionHeader eyebrow="What happens next" title="A simple path from enquiry to recommendation" />
+          <ul className="check-list">
+            <li>We review your requirement and identify any missing technical details.</li>
+            <li>We contact you to understand the site, timeline, and decision criteria.</li>
+            <li>We outline the practical scope, information required, and next project step.</li>
+            <li>We continue toward a proposal or procurement discussion when the brief is clear.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <VisualBreak
+          reverse
+          eyebrow="Prepare your brief"
+          title="The more context you share, the more useful our response can be"
+          text="A drawing, BOQ, recent bill, equipment list, site photograph, or simple description can help us understand the requirement and ask better follow-up questions."
+          image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85"
+          imageAlt="Project documents and planning notes on a desk"
+        />
       </section>
     </div>
   )

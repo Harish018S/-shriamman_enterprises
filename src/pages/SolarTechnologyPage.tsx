@@ -1,4 +1,6 @@
 import { SectionHeader } from '../components/SectionHeader'
+import { VisualBreak } from '../components/VisualBreak'
+import { PageHero } from '../components/PageHero'
 
 const techStack = [
   {
@@ -34,12 +36,7 @@ const techStack = [
 export default function SolarTechnologyPage() {
   return (
     <div className="page-shell">
-      <section className="page-hero small-hero">
-        <div className="container narrow">
-          <p className="eyebrow">Solar Products / Technology</p>
-          <h1>Technology options for practical solar system planning</h1>
-        </div>
-      </section>
+      <PageHero eyebrow="Solar Products / Technology" title="Technology options for practical solar system planning" image="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85" imageAlt="Rows of photovoltaic solar panels" />
 
       <section className="page-section">
         <div className="container">
@@ -62,6 +59,28 @@ export default function SolarTechnologyPage() {
             Available based on project requirements and approved supplier specifications. We can support requirement review and supplier alignment for the right technical fit.
           </p>
           <a className="btn btn-primary" href="/request-quote">Send Your Requirement</a>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <VisualBreak
+          reverse
+          eyebrow="System thinking"
+          title="Every component has a job in the final energy yield"
+          text="Modules, inverters, structures, protection, cabling, and monitoring work as one system. We help align those choices with the site, capacity, installation conditions, and service expectations."
+          image="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85"
+          imageAlt="Rows of photovoltaic solar panels in daylight"
+        />
+      </section>
+
+      <section className="page-section">
+        <div className="container">
+          <SectionHeader eyebrow="How technology is selected" title="The right component depends on the project, not just the datasheet" center />
+          <div className="card-grid three-col">
+            <article className="info-card"><h3>Site and structure</h3><p>Available area, roof condition, orientation, shading, wind exposure, and access influence the system layout.</p></article>
+            <article className="info-card"><h3>Energy objective</h3><p>Self-consumption, peak demand, backup expectations, generation target, and expansion plans shape the design brief.</p></article>
+            <article className="info-card"><h3>Lifecycle fit</h3><p>Serviceability, warranties, monitoring, replacement planning, and supplier support matter throughout system operation.</p></article>
+          </div>
         </div>
       </section>
     </div>
