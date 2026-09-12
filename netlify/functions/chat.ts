@@ -41,10 +41,19 @@ export default async (request: Request) => {
       }),
     })
 
-    const data = await response.json() as { choices?: Array<{ message?: { content?: string } }> }
+    const data = await response.json() as {
+      choices?: Array<{ message?: { content?: string } }>
+      error?: { type?: string; code?: string; message?: string }
+    }
     const reply = data.choices?.[0]?.message?.content
 
     if (!response.ok || !reply) {
+      console.error('OpenAI chat request failed', {
+        status: response.status,
+        type: data.error?.type,
+        code: data.error?.code,
+        message: data.error?.message,
+      })
       return Response.json({ error: 'The AI service could not respond.' }, { status: 502 })
     }
 
