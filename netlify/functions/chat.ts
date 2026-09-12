@@ -21,7 +21,7 @@ function normalizeQuestion(question: string) {
 }
 
 function findProductInContext(messages: ChatMessage[]) {
-  const conversation = messages.map((message) => message.content).join(' ')
+  const conversation = messages.filter((message) => message.role === 'user').map((message) => message.content).join(' ')
   const normalizedConversation = normalizeQuestion(conversation)
   return products.find((product) => {
     const modelTerms = [product.model, product.id, `${product.manufacturer} ${product.model}`]
@@ -76,6 +76,10 @@ function answerQuestion(question: string, messages: ChatMessage[]) {
     return 'Current availability is subject to confirmation. Please share the product or model, quantity, destination, and required delivery date for a sales enquiry.'
   }
 
+  if (/full|complete|technical|datasheet|specification/.test(normalizedQuestion) && !product) {
+    return 'Which product or model would you like the technical specifications for? You can ask about the Caterpillar generator, Jinko or LONGi panels, Sungrow inverter, BYD or Deye battery, Philips street light, or a solar pump family.'
+  }
+
   if (product) {
     return conciseProductAnswer(product, question)
   }
@@ -89,6 +93,30 @@ function answerQuestion(question: string, messages: ChatMessage[]) {
       return 'The listed reference diesel generator is the Caterpillar C4.4 DE125AE0, rated at 100 kVA prime power and 110 kVA standby power. Generator capacity bands are 5-25, 30-100, 125-500, and 500-1,000+ kVA. Current options and commercial terms are confirmed case by case.'
     }
     return 'We support generator sourcing, supply, installation, electrical integration, commissioning, preventive maintenance, breakdown support, and AMC. Please share your required kVA, application, voltage, frequency, phase, destination, and quantity.'
+  }
+
+  if (/street solar|solar street|street light|solar lighting/.test(normalizedQuestion)) {
+    return 'The catalogue includes the Philips / Signify SunStay BRP710 LED20 as a manufacturer reference product. It provides 2,000 lm at 175 lm/W. Ask for its full reference specifications or prepare a quotation for the required lighting class and site.'
+  }
+
+  if (/solar panel|pv module|solar module|panel wattage/.test(normalizedQuestion)) {
+    return 'The catalogue includes Jinko Solar Tiger Neo 575 Wp and the LONGi Hi-MO 7 585-620 W reference family. Ask about a named model or wattage for a concise specification answer. Exact commercial availability is confirmed case by case.'
+  }
+
+  if (/inverter/.test(normalizedQuestion)) {
+    return 'The catalogue includes the Sungrow SG50CX-P2 as a 50 kW three-phase string inverter reference product. Ask for its efficiency, MPPT count, or full reference specifications.'
+  }
+
+  if (/battery|energy storage|ess/.test(normalizedQuestion)) {
+    return 'The catalogue includes BYD HVM 11.0 and Deye SE-G5.1 as manufacturer reference battery products. Ask about capacity, chemistry, cycle life, or a specific model. Compatibility and availability are confirmed case by case.'
+  }
+
+  if (/pump|water pumping/.test(normalizedQuestion)) {
+    return 'The catalogue includes the Grundfos SQFlex and LORENTZ PS2-1800 solar pump families. Selection depends on required flow, head, water source, and solar availability.'
+  }
+
+  if (/purifier|water purifier|ro purifier/.test(normalizedQuestion)) {
+    return 'Water purifiers are not currently listed in the product catalogue. I can help with solar water pumps, solar systems, generators, panels, stabilizers, and electrical solutions.'
   }
 
   if (/solar|panel|rooftop|epc|inverter|bifacial|topcon/.test(normalizedQuestion)) {
