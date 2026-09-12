@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Bot, ClipboardList, LoaderCircle, MessageCircle, Send, X } from 'lucide-react'
+import { products } from '../data/products'
 
 type ChatMessage = {
   role: 'user' | 'assistant'
@@ -46,6 +47,20 @@ export function ChatBox() {
     const nextMessages = [...messages, { role: 'user' as const, content: trimmedMessage }]
     setMessages(nextMessages)
     setMessage('')
+
+    if (/\b(need|want|request|prepare|send)\b.*\b(quote|quotation|rfq|pricing)\b|\bquote\b|\bquotation\b|\brfq\b/i.test(trimmedMessage)) {
+      openRfqFromConversation(nextMessages, trimmedMessage)
+      setMessages((currentMessages) => [...currentMessages, { role: 'assistant', content: 'I can prepare the quotation request. Please complete the RFQ fields below so the team has the product, quantity, destination, and delivery details.' }])
+      return
+    }
+
+    const quantityMatch = trimmedMessage.match(/\b(\d+)\s*(?:numbers?|units?|pieces?|pcs?)\b/i)
+    if (quantityMatch) {
+      setRfq((current) => ({ ...current, quantity: quantityMatch[1] }))
+      setMessages((currentMessages) => [...currentMessages, { role: 'assistant', content: `Noted: quantity ${quantityMatch[1]}. Say “request a quote” when you are ready to provide the destination and contact details.` }])
+      return
+    }
+
     setIsSending(true)
 
     try {
@@ -69,6 +84,18 @@ export function ChatBox() {
 
   function updateRfq(field: keyof RfqState, value: string) {
     setRfq((current) => ({ ...current, [field]: value }))
+  }
+
+  function openRfqFromConversation(conversation: ChatMessage[], question: string) {
+    const conversationText = conversation.map((item) => item.content).join(' ').toLowerCase()
+    const selectedProduct = products.find((product) => [product.name, product.manufacturer, product.model].some((term) => conversationText.includes(term.toLowerCase())))
+    const quantity = question.match(/\b(\d+)\s*(?:numbers?|units?|pieces?|pcs?)\b/i)?.[1] || ''
+    setRfq((current) => ({
+      ...current,
+      product: selectedProduct ? `${selectedProduct.manufacturer} ${selectedProduct.model}` : current.product,
+      quantity: quantity || current.quantity,
+    }))
+    setShowRfq(true)
   }
 
   function handleRfqSubmit(event: FormEvent<HTMLFormElement>) {
