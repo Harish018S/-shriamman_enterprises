@@ -18,7 +18,7 @@ function answerQuestion(question: string) {
     return 'The Caterpillar C4.4 DE125AE0 diesel generator is rated at 100 kVA (80 kW) prime power and 110 kVA (88 kW) standby power at 50 Hz. It uses an inline 4-cylinder, 4.4 L turbocharged direct-injection diesel engine, runs at 1,500 rpm, and supports 220–380 V operation. Dimensions are 1,980 × 890 × 1,376 mm, with a maximum dry weight of 1,065 kg and an acoustic enclosure.'
   }
 
-  if (/jinko|jkm575n|575\s*wp|575w/.test(normalizedQuestion)) {
+  if (/jinko|jkm575n|575\s*wp|575\s*w\b/.test(normalizedQuestion)) {
     return 'The Jinko Solar Tiger Neo JKM575N-72HL4 is a 575 Wp N-type monocrystalline module with 22.26% efficiency, 144 cells, Vmp 42.22 V, Imp 13.62 A, Voc 50.88 V, and Isc 14.39 A. It measures 2,278 × 1,134 × 35 mm, weighs 28 kg, has an IP68 junction box, and supports 1,000/1,500 V DC maximum system voltage.'
   }
 
