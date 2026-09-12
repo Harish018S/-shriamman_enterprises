@@ -691,6 +691,13 @@ h3 {
 .demo-testimonial p { margin: 0; color: var(--text-muted); font-style: italic; }
 .demo-testimonial span { margin-top: auto; color: var(--surface); font-size: 0.8rem; font-weight: 700; }
 .demo-testimonial small { color: var(--text-muted); font-weight: 400; }
+.image-card { overflow: hidden; padding: 0; }
+.image-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.image-card h3, .image-card p { margin-left: 1.6rem; margin-right: 1.6rem; }
+.image-card h3 { margin-top: 0.4rem; }
+.image-card p { margin-bottom: 1.6rem; }
+.visual-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.visual-feature img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow); }
 .rfq-confirmation { padding: 2rem; border: 1px solid rgba(214, 146, 22, 0.35); background: #fffaf0; border-radius: var(--radius); }
 .rfq-confirmation-mark { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 1rem; border-radius: 50%; background: var(--primary); color: var(--surface); font-weight: 800; }
 .rfq-confirmation h2 { margin-top: 0.35rem; }
@@ -1183,6 +1190,7 @@ textarea { resize: vertical; }
   }
 
   .product-grid, .catalog-band-grid, .catalog-detail-grid { grid-template-columns: 1fr 1fr; }
+  .visual-feature { grid-template-columns: 1fr; }
 
   .main-nav {
     position: absolute;

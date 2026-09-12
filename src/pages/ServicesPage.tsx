@@ -15,6 +15,8 @@ const services = [
   'Technical support',
 ]
 
+const serviceImages = [siteImages.generator, siteImages.services, siteImages.solar, siteImages.panel, siteImages.assistant, siteImages.services, siteImages.services, siteImages.services, siteImages.assistant]
+
 export default function ServicesPage() {
   return (
     <div className="page-shell">
@@ -24,8 +26,9 @@ export default function ServicesPage() {
         <div className="container">
           <SectionHeader eyebrow="Service overview" title="From concept to commissioning and support" center />
           <div className="card-grid three-col">
-            {services.map((service) => (
-              <article key={service} className="info-card simple-card">
+            {services.map((service, index) => (
+              <article key={service} className="info-card simple-card image-card">
+                <img src={serviceImages[index].imagePath} alt={serviceImages[index].altText} loading="lazy" width="900" height="600" />
                 <h3>{service}</h3>
                 <p>End-to-end support tailored to the operating environment and business requirements.</p>
               </article>

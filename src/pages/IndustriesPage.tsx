@@ -4,16 +4,16 @@ import { PageHero } from '../components/PageHero'
 import { siteImages } from '../data/images'
 
 const industries = [
-  'Manufacturing',
-  'Commercial Buildings',
-  'Hospitals',
-  'Hotels',
-  'Educational Institutions',
-  'Data / IT Infrastructure',
-  'Warehouses',
-  'Retail',
-  'Residential / Apartment Communities',
-  'Other Industrial Applications',
+  { name: 'Manufacturing', image: siteImages.industryManufacturing },
+  { name: 'Commercial Buildings', image: siteImages.industryCommercial },
+  { name: 'Hospitals', image: siteImages.industryHealthcare },
+  { name: 'Hotels', image: siteImages.industryCommercial },
+  { name: 'Educational Institutions', image: siteImages.industryCommercial },
+  { name: 'Data / IT Infrastructure', image: siteImages.industryHealthcare },
+  { name: 'Warehouses', image: siteImages.industryManufacturing },
+  { name: 'Retail', image: siteImages.industryCommercial },
+  { name: 'Residential / Apartment Communities', image: siteImages.industryCommercial },
+  { name: 'Other Industrial Applications', image: siteImages.industryManufacturing },
 ]
 
 export default function IndustriesPage() {
@@ -26,8 +26,9 @@ export default function IndustriesPage() {
           <SectionHeader eyebrow="Sector focus" title="Industry-ready energy planning" center />
           <div className="card-grid three-col">
             {industries.map((industry) => (
-              <article key={industry} className="info-card simple-card">
-                <h3>{industry}</h3>
+              <article key={industry.name} className="info-card simple-card image-card">
+                <img src={industry.image.imagePath} alt={industry.image.altText} loading="lazy" width="900" height="600" />
+                <h3>{industry.name}</h3>
                 <p>Solutions suitable for business continuity, operational resilience, and energy planning.</p>
               </article>
             ))}
