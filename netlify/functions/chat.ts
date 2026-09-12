@@ -15,39 +15,39 @@ function answerQuestion(question: string) {
   }
 
   if (/caterpillar|de125ae0|c4\.4|100\s*kva|110\s*kva/.test(normalizedQuestion)) {
-    return 'The Caterpillar C4.4 DE125AE0 diesel generator is rated at 100 kVA (80 kW) prime power and 110 kVA (88 kW) standby power at 50 Hz. It uses an inline 4-cylinder, 4.4 L turbocharged direct-injection diesel engine, runs at 1,500 rpm, and supports 220–380 V operation. Dimensions are 1,980 × 890 × 1,376 mm, with a maximum dry weight of 1,065 kg and an acoustic enclosure.'
+    return 'Yes. The Caterpillar C4.4 DE125AE0 is rated at 100 kVA prime power and 110 kVA standby power at 50 Hz. For current price, availability, installation scope, and the full datasheet, please request a quotation.'
   }
 
   if (/jinko|jkm575n|575\s*wp|575\s*w\b/.test(normalizedQuestion)) {
-    return 'The Jinko Solar Tiger Neo JKM575N-72HL4 is a 575 Wp N-type monocrystalline module with 22.26% efficiency, 144 cells, Vmp 42.22 V, Imp 13.62 A, Voc 50.88 V, and Isc 14.39 A. It measures 2,278 × 1,134 × 35 mm, weighs 28 kg, has an IP68 junction box, and supports 1,000/1,500 V DC maximum system voltage.'
+    return 'The Jinko Solar Tiger Neo JKM575N-72HL4 is a 575 Wp N-type monocrystalline module with up to 22.26% efficiency and 144 cells. Ask for a quotation to receive the current datasheet, stock, warranty, and project pricing.'
   }
 
   if (/longi|hi-mo 7|lr7-72hgd|620\s*w/.test(normalizedQuestion)) {
-    return 'The LONGi Hi-MO 7 LR7-72HGD family includes 585–620 W versions, with up to 23.0% efficiency. The cited 620 W version has 144 cells, dimensions of 2,382 × 1,134 × 30 mm, 33.5 kg weight, IP68 junction box, dual-glass construction, and approximately 80% bifaciality. Its listed front/rear static loads are 5,400/2,400 Pa.'
+    return 'The LONGi Hi-MO 7 LR7-72HGD family includes 585–620 W modules with up to 23.0% efficiency and bifacial dual-glass construction. Request a quotation for the exact model, datasheet, warranty, and availability.'
   }
 
   if (/sungrow|sg50cx|50\s*kw|50\s*kva|string inverter/.test(normalizedQuestion)) {
-    return 'The Sungrow SG50CX-P2 is a 3-phase string inverter rated at 50 kW/50 kVA. It accepts up to 1,100 V DC, supports up to 70 kWp recommended PV input, has 4 independent MPPTs with 2 strings per MPPT, and reaches 98.5% maximum efficiency. AC output is 230/400 V at 50 Hz, with IP66 protection and dimensions of 645 × 575 × 245 mm.'
+    return 'The Sungrow SG50CX-P2 is a 3-phase string inverter rated at 50 kW/50 kVA, with up to 98.5% maximum efficiency. Request a quotation for the current datasheet, system compatibility, warranty, and availability.'
   }
 
   if (/byd|hvm 11|11\.04\s*kwh/.test(normalizedQuestion)) {
-    return 'The BYD Battery-Box Premium HVM 11.0 provides 11.04 kWh usable energy from 4 modules. It uses LFP chemistry, with 2.76 kWh per module, 204.8 V nominal system voltage, 50 A maximum output current, and 75 A peak output for 3 seconds. Weight and dimensions should be confirmed from the exact current BYD datasheet.'
+    return 'The BYD Battery-Box Premium HVM 11.0 provides 11.04 kWh usable energy using LFP chemistry. Request a quotation for compatibility, current datasheet, warranty, and availability.'
   }
 
   if (/deye|se-g5\.1|5\.12\s*kwh/.test(normalizedQuestion)) {
-    return 'The Deye SE-G5.1 Pro-B is a LiFePO4 residential ESS battery with 5.12 kWh nominal and 4.6 kWh usable energy, 51.2 V nominal voltage, 100 Ah capacity, 50 A recommended charge/discharge current, 90% recommended DoD, and at least 6,000 cycles. It measures 440 × 133 × 540 mm, weighs approximately 45 kg, and has IP20 protection.'
+    return 'The Deye SE-G5.1 Pro-B is a LiFePO4 residential ESS battery with 5.12 kWh nominal and 4.6 kWh usable energy. Request a quotation for the exact datasheet, compatibility, warranty, and availability.'
   }
 
   if (/philips|sunstay|brp710|solar street light|2,000\s*lm/.test(normalizedQuestion)) {
-    return 'The Philips/Signify SunStay BRP710 LED20 solar street light provides 2,000 lm at 175 lm/W and 5,700 K. It uses a 28 W polycrystalline panel and a 12.8 V, 13.6 Ah lithium iron phosphate battery, with MPPT control, IP65 protection, 50,000-hour L70B50 life, 12.5 kg weight, and a 3-year warranty.'
+    return 'The Philips/Signify SunStay BRP710 LED20 solar street light provides 2,000 lm at 175 lm/W. Request a quotation for the current product sheet, installation requirements, warranty, and availability.'
   }
 
   if (/grundfos|sqflex|water pump|18\s*m³|250\s*m/.test(normalizedQuestion)) {
-    return 'Grundfos SQFlex is a family, not one single pump model. Family-level specifications include 0.3–2.5 kW motor sizes, up to 18 m³/h flow, up to 250 m head, 30–300 V DC or 90–240 V AC compatibility, IP68 enclosure, and 3- or 4-inch pump options. Please provide required flow, head, water source, and solar availability before selecting a model.'
+    return 'Grundfos SQFlex is a family of solar-compatible pumps, not one single model. Correct selection depends on required flow, head, water source, and solar availability. Share those details for a suitable recommendation.'
   }
 
   if (/lorentz|ps2-1800|solar pump/.test(normalizedQuestion)) {
-    return 'The LORENTZ PS2-1800 family is configuration-dependent. The cited CS-F configuration supports up to 50 m total dynamic head and 8.5 m³/h maximum flow, with required Vmp above 102 V DC, maximum Voc 200 V DC, and nominal DC voltage of 72–96 V. Please provide required flow and head for correct sizing.'
+    return 'LORENTZ PS2-1800 is a configuration-dependent solar pump family. Correct selection depends on required flow, head, water source, and solar availability. Share those details for a suitable recommendation.'
   }
 
   if (/solar|panel|rooftop|epc|inverter|bifacial|topcon/.test(normalizedQuestion)) {
