@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Mail, MapPin, Menu, Phone, X } from 'lucide-react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { company } from '../data/company'
+import { ChatBox } from './ChatBox'
 
 export function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -119,6 +120,8 @@ export function Layout() {
           </div>
         </div>
       </footer>
+
+      <ChatBox />
     </>
   )
 }

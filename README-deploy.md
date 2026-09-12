@@ -29,7 +29,11 @@ VITE_COMPANY_PHONE="[PHONE NUMBER]"
 VITE_COMPANY_ADDRESS="No 55/6, P.H Road, Arumbakkam, Chennai - 600106"
 VITE_WHATSAPP_NUMBER="[WHATSAPP NUMBER]"
 VITE_SITE_URL="https://your-domain.netlify.app"
+OPENAI_API_KEY="your-server-side-key"
+OPENAI_MODEL="gpt-4o-mini"
 ```
+
+The chat assistant requires `OPENAI_API_KEY` in Netlify environment variables. Keep this key server-side; do not add it to `VITE_` variables.
 
 ## 4) Security guidance
 
