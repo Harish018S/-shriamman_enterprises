@@ -31,7 +31,7 @@ function findProductInContext(messages: ChatMessage[]) {
 }
 
 function productListAnswer() {
-  return 'Our reference catalogue includes Caterpillar C4.4 DE125AE0 diesel generator, Jinko Solar Tiger Neo 575 Wp module, LONGi Hi-MO 7 module family, Sungrow SG50CX-P2 inverter, BYD HVM 11.0 battery, Deye SE-G5.1 Pro-B battery, Philips SunStay solar street light, Grundfos SQFlex pump family, and LORENTZ PS2-1800 pump family. Exact commercial availability is confirmed case by case.'
+  return 'Our reference catalogue includes Caterpillar C4.4 DE125AE0 diesel generator, Jinko Solar Tiger Neo 575 Wp module, LONGi Hi-MO 7 module family, Sungrow SG50CX-P2 inverter, BYD HVM 11.0 battery, Deye SE-G5.1 battery, Philips SunStay solar street light, Grundfos SQFlex pump family, and LORENTZ PS2-1800 pump family. Exact commercial availability is confirmed case by case.'
 }
 
 function conciseProductAnswer(product: Product, question: string) {
