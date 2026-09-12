@@ -22,6 +22,10 @@ function answerQuestion(question: string) {
     return 'We manufacture and supply electrical panels and stabilizers for commercial and industrial requirements. To guide you correctly, please share the equipment type, load or capacity, voltage, location, and required delivery timeline.'
   }
 
+  if (/product|products|available|specification|specs|model|capacity|rating/.test(normalizedQuestion)) {
+    return 'Our current product and solution categories are: rooftop and industrial solar systems; Mono PERC, TOPCon, bifacial, and high-efficiency solar modules; inverters; mounting structures; solar BOS components; generators and DG sets; electrical panels; and stabilizers. Exact brand, model, kW/kVA rating, voltage, dimensions, warranty, and availability depend on the project and are not published in this assistant yet. Please use Request a Quote with your required capacity and application for a verified specification sheet.'
+  }
+
   if (/service|maintenance|amc|repair|breakdown|support/.test(normalizedQuestion)) {
     return 'Our services include installation, commissioning, preventive maintenance, breakdown support, AMC, and technical support for power and solar systems. Please share the equipment type, issue, location, and preferred service date.'
   }
