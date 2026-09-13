@@ -1,234 +1,184 @@
-import { ArrowRight, BatteryCharging, Building2, Factory, Leaf, ShieldCheck, SunMedium } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { CTASection } from '../components/CTASection'
-import { HeroSection } from '../components/HeroSection'
+import { ArrowRight, BatteryCharging, Check, ShieldCheck, SunMedium, Zap } from 'lucide-react'
 import { QuoteForm } from '../components/QuoteForm'
-import { SectionHeader } from '../components/SectionHeader'
 import { siteImages } from '../data/images'
 
-const solutionCards = [
-  {
-    title: 'Generator Solutions',
-    icon: BatteryCharging,
-    items: ['Generator sourcing', 'Supply', 'Installation', 'Commissioning', 'Maintenance / service', 'Power backup solutions'],
-  },
-  {
-    title: 'Solar Energy Solutions',
-    icon: SunMedium,
-    items: ['Solar panel procurement', 'Solar system design', 'Supply', 'Installation', 'Commissioning', 'Solar EPC support', 'Operation & maintenance'],
-  },
-  {
-    title: 'Energy Solutions',
-    icon: Leaf,
-    items: ['Power infrastructure', 'Backup power', 'Energy efficiency', 'Renewable energy transition', 'Customized power solutions'],
-  },
+const statCards = [
+  { value: '24-48', label: 'Quick response time' },
+  { value: 'Expert Support', label: 'Technical & commercial guidance' },
+  { value: 'B2B Focus', label: 'For domestic & industrial buyers' },
 ]
 
-const benefits = [
-  'Reduced dependence on conventional power',
-  'Long-term energy cost optimization',
-  'Renewable energy adoption',
-  'Reduced environmental impact',
-  'Scalable solutions',
-  'Improved energy planning',
+const benefitBullets = [
+  'Generators, solar, electrical and related solutions',
+  'Domestic and industrial applications',
+  'Technical documentation and datasheets',
+  'Competitive quotations and reliable support',
 ]
 
-const values = [
-  { title: 'Single-point coordination', icon: Building2 },
-  { title: 'Technical understanding', icon: ShieldCheck },
-  { title: 'Procurement support', icon: Factory },
-  { title: 'Reliable project execution', icon: ArrowRight },
+const productCards = [
+  { name: 'Jinko Solar Tiger Neo 575 Wp', category: 'Solar Module', image: siteImages.solar.imagePath },
+  { name: 'Sungrow SG5KCP2', category: 'Inverter', image: siteImages.inverter.imagePath },
+  { name: 'Deye SE-G5.1', category: 'Battery', image: siteImages.battery.imagePath },
+  { name: 'Cummins Diesel Generator', category: 'Generator', image: siteImages.generator.imagePath },
 ]
 
-const planningSteps = [
-  { number: '01', title: 'Understand', text: 'Review your load, site, operating hours, and business priorities.' },
-  { number: '02', title: 'Recommend', text: 'Compare generator backup, solar, or a practical combination of both.' },
-  { number: '03', title: 'Deliver', text: 'Coordinate procurement, installation, commissioning, and handover.' },
-  { number: '04', title: 'Support', text: 'Keep your power infrastructure dependable with ongoing service.' },
+const powerSolutions = [
+  { title: 'Generator', text: 'Reliable backup power', icon: BatteryCharging },
+  { title: 'Solar PV', text: 'Clean renewable energy', icon: SunMedium },
+  { title: 'Battery Storage', text: 'Energy when you need it', icon: Zap },
+  { title: 'Hybrid Power', text: 'Maximum efficiency & reliability', icon: ShieldCheck },
 ]
 
-const marqueeItems = [
-  '• Solar EPC Support',
-  '• Reliable Energy Planning',
-  '• Generator Sale',
-  '• Solar EPC Support',
-  '• Reliable Energy Planning',
-  '• Generator Sale',
-  '• Solar EPC Support',
-  '• Reliable Energy Planning',
-  '• Generator Sale',
+const industries = [
+  'Manufacturing',
+  'Commercial Buildings',
+  'Healthcare',
+  'Construction',
+  'Agriculture',
+  'Hospitality',
+]
+
+const processSteps = [
+  { number: '01', title: 'Share your requirement', text: 'Tell us what you need and where the site is located.' },
+  { number: '02', title: 'Technical assessment', text: 'We review the application, load and project conditions.' },
+  { number: '03', title: 'Product selection', text: 'We shortlist the right equipment and sourcing options.' },
+  { number: '04', title: 'Quotation', text: 'We send a clear, practical quotation for review.' },
+  { number: '05', title: 'Supply & support', text: 'Delivery, coordination and post-sale support follow.' },
 ]
 
 export default function HomePage() {
   return (
-    <>
-      <HeroSection
-        eyebrow="Complete Power Solutions for Business"
-        title="Reliable Power Today. Smarter Energy Tomorrow."
-        text="From generator sales, installation and service to solar energy systems, Shri Amman Enterprises helps commercial and industrial facilities stay powered, efficient and ready for growth."
-        primaryAction={{ label: 'Explore Solar Solutions', href: '/solar-solutions' }}
-        secondaryAction={{ label: 'Explore Generator Solutions', href: '/generator-solutions' }}
-        image={siteImages.hero.imagePath}
-        imageAlt={siteImages.hero.altText}
-        imageSlides={[
-          { src: siteImages.hero.imagePath, alt: siteImages.hero.altText },
-          { src: siteImages.generator.imagePath, alt: siteImages.generator.altText },
-          { src: siteImages.solar.imagePath, alt: siteImages.solar.altText },
-          { src: siteImages.assistant.imagePath, alt: siteImages.assistant.altText },
-        ]}
-        badge="Generators + Solar | Established 2005"
-      />
+    <main className="home-shell">
+      <section className="quote-landing-section">
+        <div className="container quote-landing-grid">
+          <div className="quote-intro-panel">
+            <p className="kicker">Plan your power solution</p>
+            <h1>Request a Quote</h1>
+            <p className="quote-intro-copy">Get a customized quotation for your power or solar requirements.</p>
+            <p className="quote-intro-text">Share your requirements and our team will help you compare options, provide technical guidance and send you a quotation based on your needs.</p>
 
-      <div className="energy-ticker" aria-label="Energy solutions">
-        <div className="energy-ticker-track">
-          <div className="energy-ticker-group" aria-hidden="true">
-            {marqueeItems.map((item, index) => <span key={`first-${index}`}>{item}</span>)}
-          </div>
-          <div className="energy-ticker-group" aria-hidden="true">
-            {marqueeItems.map((item, index) => <span key={`second-${index}`}>{item}</span>)}
-          </div>
-        </div>
-      </div>
-
-      <section className="page-section consultation-section">
-        <div className="container consultation-grid">
-          <div>
-            <SectionHeader
-              eyebrow="Start With A Clear Plan"
-              title="Plan the right power solution for your facility"
-              text="Share your requirement and our team will help you compare generator backup, solar capacity, procurement, installation, and long-term service support."
-            />
-            <div className="proof-grid">
-              <div className="proof-item"><strong>21+</strong><span>Years in power solutions</span></div>
-              <div className="proof-item"><strong>End-to-end</strong><span>Procurement to commissioning</span></div>
-              <div className="proof-item"><strong>B2B-first</strong><span>Commercial and industrial focus</span></div>
-            </div>
-            <div className="planning-panel">
-              <p className="planning-panel-label">One team from requirement to support</p>
-              <div className="planning-steps">
-                {planningSteps.map((step) => (
-                  <div className="planning-step" key={step.number}>
-                    <span>{step.number}</span>
-                    <div><strong>{step.title}</strong><p>{step.text}</p></div>
+            <div className="quote-stat-grid">
+              {statCards.map((card) => (
+                <div key={card.value} className="quote-stat-card">
+                  <div className="quote-stat-icon">
+                    {card.value === '24-48' ? '◔' : card.value === 'Expert Support' ? '✦' : '⚡'}
                   </div>
-                ))}
-              </div>
+                  <div className="quote-stat-copy">
+                    <strong>{card.value}</strong>
+                    <span>{card.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <ul className="quote-bullets">
+              {benefitBullets.map((item) => (
+                <li key={item}><Check size={16} />{item}</li>
+              ))}
+            </ul>
+
+            <div className="quote-image-block">
+              <img src={siteImages.hero.imagePath} alt={siteImages.hero.altText} />
             </div>
           </div>
-          <div className="consultation-form-wrap">
-            <div className="form-intro">
-              <span className="eyebrow">Free consultation</span>
-              <h2>Tell us what you need</h2>
-              <p>We will get back to you with the next practical step.</p>
-            </div>
+
+          <div className="quote-form-panel">
+            <p className="kicker">Request a quotation</p>
+            <h2>Tell us what you need</h2>
+            <p>Fill in the details below and our team will get back to you with the right solution and quotation.</p>
             <QuoteForm />
           </div>
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section product-section">
         <div className="container">
-          <SectionHeader eyebrow="What We Do" title="Powering business continuity and long-term energy readiness" center />
+          <div className="section-header-row">
+            <div>
+              <p className="kicker">Featured products</p>
+              <h2>Popular Products</h2>
+            </div>
+            <button type="button" className="btn btn-secondary">View All Products <ArrowRight size={15} /></button>
+          </div>
 
-          <div className="card-grid three-col">
-            {solutionCards.map(({ title, icon: Icon, items }) => (
-              <article key={title} className="info-card solution-card">
-                <div className="card-icon">
-                  <Icon size={26} />
+          <div className="product-card-grid">
+            {productCards.map((product) => (
+              <article key={product.name} className="product-card-item">
+                <div className="product-card-topline">{product.category}</div>
+                <div className="product-card-image-wrap">
+                  <img src={product.image} alt={product.name} />
                 </div>
-                <h3>{title}</h3>
-                <ul>
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <h3>{product.name}</h3>
+                <div className="product-card-actions">
+                  <button type="button" className="btn btn-secondary dark">View Details</button>
+                  <button type="button" className="btn btn-primary">Request Quote</button>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section alt-bg">
-        <div className="container split-layout">
-          <div>
-            <SectionHeader
-              eyebrow="Solar Expansion"
-              title="Expanding from Power Backup to Clean Energy"
-              text="With over 21 years in power and electrical solutions, we have built a strong foundation in generator support, electrical panels, and stabilizers. We are now expanding our capabilities into solar solutions to serve commercial and industrial power requirements."
-            />
-            <Link className="btn btn-primary" to="/contact">
-              Discuss Your Solar Requirement
-            </Link>
-          </div>
-
-          <div className="mini-panel">
-            <div className="metric-box">
-              <strong>Solar-ready</strong>
-              <span>Procurement, design, and project coordination support</span>
-            </div>
-            <div className="metric-box">
-              <strong>Commercial & Industrial</strong>
-              <span>Energy planning for growing business requirements</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section">
+      <section className="page-section solutions-panel-section">
         <div className="container">
-          <SectionHeader eyebrow="Why Solar" title="Business advantages of solar adoption" center />
-          <div className="feature-list">
-            {benefits.map((benefit) => (
-              <div key={benefit} className="feature-pill">
-                <span className="check">✓</span>
-                <span>{benefit}</span>
+          <div className="section-header-row aligned-row">
+            <div>
+              <p className="kicker">From conventional to renewable</p>
+              <h2>Our Power Solutions</h2>
+            </div>
+            <button type="button" className="btn btn-secondary">Explore Solutions <ArrowRight size={15} /></button>
+          </div>
+
+          <div className="solution-tiles">
+            {powerSolutions.map(({ title, text, icon: Icon }) => (
+              <div key={title} className="solution-tile">
+                <div className="tile-icon"><Icon size={22} /></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section alt-bg">
-        <div className="container">
-          <SectionHeader eyebrow="Why Choose Us" title="A practical B2B approach to power and energy solutions" center />
-          <div className="card-grid four-col">
-            {values.map(({ title, icon: Icon }) => (
-              <article key={title} className="info-card value-card">
-                <div className="card-icon small-card-icon">
-                  <Icon size={20} />
-                </div>
-                <h3>{title}</h3>
+      <section className="page-section industries-section">
+        <div className="container industries-grid">
+          <div className="industries-copy">
+            <p className="kicker">Industries we serve</p>
+            <h2>Industries We Serve</h2>
+            <p>We provide customized power and solar solutions for a wide range of industries and applications.</p>
+            <button type="button" className="btn btn-secondary">View All Industries <ArrowRight size={15} /></button>
+          </div>
+
+          <div className="industry-card-grid">
+            {industries.map((industry, index) => (
+              <article key={industry} className="industry-card">
+                <img src={index % 2 === 0 ? siteImages.industryCommercial.imagePath : siteImages.industryManufacturing.imagePath} alt={industry} />
+                <span>{industry}</span>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section demo-feedback-section">
+      <section className="page-section process-section">
         <div className="container">
-          <SectionHeader
-            eyebrow="Client Feedback - Demo Content"
-            title="A place for approved customer experiences"
-            text="These sample testimonials are for website demonstration purposes and will be replaced with verified customer feedback."
-            center
-          />
-          <div className="card-grid four-col">
-            <article className="info-card demo-testimonial"><strong>★★★★★ 5.0/5</strong><p>“The team was responsive throughout the enquiry and helped us understand the generator requirements clearly. The quotation process was straightforward and professional.”</p><span>Operations Manager<br />Industrial Equipment Buyer<br /><small>Sample / Demo Testimonial</small></span></article>
-            <article className="info-card demo-testimonial"><strong>★★★★★ 4.8/5</strong><p>“We appreciated the quick response to our power requirement and the clear technical information provided during the enquiry.”</p><span>Procurement Manager<br />Commercial Projects<br /><small>Sample / Demo Testimonial</small></span></article>
-            <article className="info-card demo-testimonial"><strong>★★★★★ 4.9/5</strong><p>“The product information was easy to understand, and the team was helpful in discussing our power and energy requirements.”</p><span>Project Coordinator<br />Engineering &amp; Infrastructure<br /><small>Sample / Demo Testimonial</small></span></article>
-            <article className="info-card demo-testimonial"><strong>★★★★★ 4.8/5</strong><p>“The quotation enquiry process was simple, and the technical requirements were captured clearly.”</p><span>Purchase Executive<br />Industrial Buyer<br /><small>Sample / Demo Testimonial</small></span></article>
+          <div className="process-header">
+            <p className="kicker">Quick &amp; simple</p>
+            <h2>How It Works</h2>
+          </div>
+
+          <div className="process-grid">
+            {processSteps.map((step) => (
+              <div key={step.number} className="process-step">
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      <CTASection
-        title="Need a tailored energy solution?"
-        text="Discuss your power backup, generator, or solar requirement with our team to plan the right solution for your facility."
-        primaryLabel="Request a Quote"
-        primaryHref="/request-quote"
-        secondaryLabel="Contact Us"
-        secondaryHref="/contact"
-      />
-    </>
+    </main>
   )
 }

@@ -1,0 +1,44 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Commercial solar installation</title>
+  <desc id="desc">Photorealistic commercial rooftop solar installation on a modern industrial building.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#edf6f4"/>
+      <stop offset="100%" stop-color="#dfe9e4"/>
+    </linearGradient>
+    <linearGradient id="building" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#dfe7e2"/>
+      <stop offset="100%" stop-color="#c2d1cd"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2f7d61"/>
+      <stop offset="100%" stop-color="#1b4a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="120" y="420" width="960" height="300" fill="url(#building)"/>
+  <path d="M90 420 L610 220 L1110 420 Z" fill="#9ca9a4"/>
+  <g transform="translate(210,260)">
+    <g opacity="0.95">
+      <path d="M0 0 h360" stroke="#7b8f8a" stroke-width="6"/>
+      <path d="M0 44 h360" stroke="#7b8f8a" stroke-width="6"/>
+      <path d="M0 88 h360" stroke="#7b8f8a" stroke-width="6"/>
+      <path d="M0 132 h360" stroke="#7b8f8a" stroke-width="6"/>
+      <path d="M0 176 h360" stroke="#7b8f8a" stroke-width="6"/>
+      <path d="M0 0 v176" stroke="#7b8f8a" stroke-width="4"/>
+      <path d="M90 0 v176" stroke="#7b8f8a" stroke-width="4"/>
+      <path d="M180 0 v176" stroke="#7b8f8a" stroke-width="4"/>
+      <path d="M270 0 v176" stroke="#7b8f8a" stroke-width="4"/>
+      <path d="M360 0 v176" stroke="#7b8f8a" stroke-width="4"/>
+      <rect x="12" y="12" width="336" height="152" fill="url(#panel)" opacity="0.82"/>
+    </g>
+  </g>
+  <g transform="translate(700,350)">
+    <rect x="0" y="240" width="180" height="120" fill="#b7c5c1"/>
+    <rect x="24" y="210" width="132" height="40" fill="#dfeae7"/>
+    <rect x="48" y="165" width="88" height="55" fill="#8ea49d"/>
+    <rect x="36" y="95" width="108" height="85" fill="#dde5e1"/>
+    <rect x="42" y="35" width="96" height="72" fill="#5a6e6a"/>
+  </g>
+  <rect x="0" y="710" width="1200" height="190" fill="#d8e4df"/>
+</svg>

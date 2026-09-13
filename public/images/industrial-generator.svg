@@ -1,0 +1,32 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Industrial diesel generator</title>
+  <desc id="desc">Enclosed industrial diesel generator in a professional commercial facility.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ecf2f0"/>
+      <stop offset="100%" stop-color="#dfe9e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <rect x="150" y="530" width="900" height="170" fill="#d3dbd8"/>
+  <g transform="translate(280,250)">
+    <rect x="0" y="180" width="440" height="200" rx="18" fill="#8f9d99"/>
+    <rect x="35" y="70" width="370" height="135" rx="12" fill="#dfe8e5"/>
+    <rect x="58" y="98" width="160" height="80" rx="8" fill="#bbc7c3"/>
+    <rect x="242" y="98" width="128" height="80" rx="8" fill="#b5c0bc"/>
+    <rect x="105" y="16" width="200" height="70" rx="10" fill="#707d7a"/>
+    <rect x="80" y="220" width="95" height="120" fill="#76827f"/>
+    <rect x="255" y="220" width="95" height="120" fill="#76827f"/>
+    <rect x="165" y="300" width="110" height="110" fill="#dfe5e2"/>
+    <path d="M165 300 h110 v110 h-110 z" fill="#c0cec9"/>
+    <path d="M180 318 h80" stroke="#7d8b86" stroke-width="5"/>
+    <path d="M180 340 h80" stroke="#7d8b86" stroke-width="5"/>
+    <path d="M180 362 h80" stroke="#7d8b86" stroke-width="5"/>
+  </g>
+  <g transform="translate(740,320)">
+    <rect x="0" y="90" width="170" height="240" fill="#d7e0dd"/>
+    <rect x="32" y="35" width="110" height="90" fill="#a9b7b3"/>
+    <rect x="36" y="145" width="102" height="90" fill="#a4b3af"/>
+  </g>
+  <rect x="0" y="690" width="1200" height="210" fill="#dfeae6"/>
+</svg>

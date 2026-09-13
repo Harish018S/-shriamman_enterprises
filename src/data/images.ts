@@ -69,6 +69,18 @@ export const siteImages: Record<string, SiteImage> = {
   assistant: {
     id: 'assistant-engineering', section: 'Power Assistant', imagePath: unsplash('photo-1581091226825-a6a2a5aee158', 700), altText: 'Technician working with electrical equipment during an engineering inspection', imageType: 'stock', source: 'Unsplash', license: 'Unsplash License', isRepresentative: true,
   },
+  capabilityVisual: {
+    id: 'capability-industrial-visual', section: 'Capabilities', imagePath: '/images/power-solutions-industrial.webp', altText: 'Commercial industrial facility with rooftop solar panels, backup power generator, and electrical infrastructure', imageType: 'generated', source: 'Project placeholder', license: 'Illustrative internal placeholder', isRepresentative: true,
+  },
+  capabilitySolar: {
+    id: 'capability-solar-visual', section: 'Capabilities', imagePath: '/images/solar-commercial.webp', altText: 'Commercial rooftop solar installation on an industrial building', imageType: 'generated', source: 'Project placeholder', license: 'Illustrative internal placeholder', isRepresentative: true,
+  },
+  capabilityGenerator: {
+    id: 'capability-generator-visual', section: 'Capabilities', imagePath: '/images/industrial-generator.webp', altText: 'Professional enclosed industrial diesel generator in a commercial facility', imageType: 'generated', source: 'Project placeholder', license: 'Illustrative internal placeholder', isRepresentative: true,
+  },
+  capabilityElectrical: {
+    id: 'capability-electrical-visual', section: 'Capabilities', imagePath: '/images/electrical-systems.webp', altText: 'Industrial electrical distribution panel and switchgear in a clean facility', imageType: 'generated', source: 'Project placeholder', license: 'Illustrative internal placeholder', isRepresentative: true,
+  },
 }
 
 export const productImageByCategory: Record<string, SiteImage> = {
